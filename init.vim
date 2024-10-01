@@ -86,4 +86,3 @@ call plug#end()
 
 
 lua require'colorizer'.setup()
-
