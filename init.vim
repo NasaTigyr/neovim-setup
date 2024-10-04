@@ -9,12 +9,9 @@ set nohlsearch
 set cursorline
 set termguicolors
 
-
-
 set nobackup 
 
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
-
 
 nnoremap <silent> <LEFT> :vertical resize -2 <CR>
 nnoremap <silent> <RIGHT> :vertical resize +2 <CR>
@@ -42,10 +39,12 @@ nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
-nnoremap y "+y
-vnoremap y "+y
-nnoremap pp "+p
-vnoremap pp "+p
+
+nnoremap y "ay
+nnoremap y "ay
+vnoremap y "ay
+nnoremap py "ap
+vnoremap py "ap
 
 nnoremap d "dd
 vnoremap d "dd
@@ -60,8 +59,10 @@ vnoremap x "xx
 nnoremap px "xp
 vnoremap px "xp
 
-nnoremap p "+p
-vnoremap p "+p
+nnoremap yp "+y
+vnoremap yp "+y
+nnoremap pp "+p
+vnoremap pp "+p
 
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
@@ -71,6 +72,8 @@ Plug 'maxmellon/vim-jsx-pretty'
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'ThePrimeagen/vim-be-good'
 
 Plug 'folke/tokyonight.nvim'
 Plug 'sainnhe/everforest'
@@ -82,7 +85,6 @@ Plug 'rebelot/kanagawa.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
 
 call plug#end()
-
 
 
 lua require'colorizer'.setup()
