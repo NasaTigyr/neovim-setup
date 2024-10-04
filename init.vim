@@ -25,8 +25,6 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 inoremap <LEFT> <Nop>
 inoremap <RIGHT> <Nop>
 
-colorscheme slate
-
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
@@ -65,26 +63,44 @@ nnoremap pp "+p
 vnoremap pp "+p
 
 call plug#begin('~/.local/share/nvim/plugged')
-Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
 "kolev plugs to try
 Plug 'sangdol/mintabline.vim'
 Plug 'maxmellon/vim-jsx-pretty'
 
+Plug 'sangdol/mintabline.vim'
+
 Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
+
+"autocomplete shit 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neovim/nvim-lspconfig'
+Plug 'pangloss/vim-javascript'
 
 Plug 'ThePrimeagen/vim-be-good'
 
+"some colorschemes
 Plug 'folke/tokyonight.nvim'
 Plug 'sainnhe/everforest'
 Plug 'diegoulloao/neofusion.nvim'
 Plug 'shaunsingh/solarized.nvim'
 Plug 'rebelot/kanagawa.nvim'
+Plug 'AlexvZyl/nordic.nvim', { 'branch': 'main' }
 
 " Add colorizer to highlight CSS/HTML colors
 Plug 'norcalli/nvim-colorizer.lua'
 
 call plug#end()
+lua require'colorizer'.setup()
+
+" colorscheme nordic
+" colorscheme kanagawa-wave " chill
+" colorscheme kanagawa-lotus " light
+ colorscheme kanagawa-dragon " dark
+" colorscheme tokyonight
+" colorscheme neofusion
+
+Plug 'sangdol/mintabline.vim'
 
 
 lua require'colorizer'.setup()
